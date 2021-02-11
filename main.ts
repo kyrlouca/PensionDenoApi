@@ -27,7 +27,7 @@ const filesData = {
 };
 
 async function justCopy(source: string, destination: string): Promise<void> {
-  // We use browser fetch API
+  // aWe use browser fetch API
   //`C:\Users\kyrlo\OneDrive\Documents\PENSION DSIS\My Testing\xbrlFiles\DSIS_0007_qri_2020_1_2021-02-05-200025.xbrl`;
 
   const filex = await Deno.open(source);
