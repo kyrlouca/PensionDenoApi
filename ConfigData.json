@@ -1,0 +1,19 @@
+{
+  "SERVER_NAME": "KYR-RYZEN\\SQLEXPRESS",
+  "EFOROS_SERVER_NAME": "KYR-RYZEN\\SQLEXPRESS",
+  "ExcelFilesFolder": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\UserExcel",
+  "ExcelFilesProcessed": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\UserExcelProcessed",
+  "OutputXbrlFolder": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\xbrlFiles",
+
+  "LoggerDatabaseWriterFile": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\loggerDbWriter.txt",
+  "LoggerValidatorFile": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\loggerValidator.txt",
+  "LoggerXbrlFile": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\loggerXbrlCreator.txt",
+  "LoggerAggregatorFile": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\loggerAggregator.txt",
+
+
+  "ArchiveConnectionString": "Data Source = KYR-RYZEN\\SQLEXPRESS; Initial Catalog =ExcelArchive; Integrated Security = true;",
+  "PensionConnectionString": "Data Source = KYR-RYZEN\\SQLEXPRESS ; Initial Catalog =PensionData; Integrated Security = true;",
+  "EiopaConnectionString": "Data Source = KYR-RYZEN\\SQLEXPRESS; Initial Catalog =EIOPA_PensionFunds_DPM_Database_250PWD; Integrated Security = true;",
+  "EforosConnectionString": "Data Source = KYR-RYZEN\\SQLEXPRESS; Initial Catalog =Eforos; Integrated Security = true;"
+
+}

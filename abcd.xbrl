@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--- - Eiopa - - Document instance by Novum International-->
+<xbrli:xbrl xmlns:find="http://www.eurofiling.info/xbrl/ext/filing-indicators" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:s2c_dim="http://eiopa.europa.eu/xbrl/s2c/dict/dim" xmlns:s2c_typ="http://eiopa.europa.eu/xbrl/s2c/dict/typ" xmlns:s2md_met="http://eiopa.europa.eu/xbrl/s2md/dict/met" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:LB="http://eiopa.europa.eu/xbrl/s2c/dict/dom/LB" xmlns:AM="http://eiopa.europa.eu/xbrl/s2c/dict/dom/AM" xmlns:SE="http://eiopa.europa.eu/xbrl/s2c/dict/dom/SE" xmlns:MC="http://eiopa.europa.eu/xbrl/s2c/dict/dom/MC">
+  <link:schemaRef xlink:type="simple" xlink:href="http://eiopa.europa.eu/eu/xbrl/s2md/fws/solvency/solvency2/2020-07-15/mod/qri.xsd" />
+  <xbrli:unit id="p">
+    <xbrli:measure>xbrli:pure</xbrli:measure>
+  </xbrli:unit>
+  <xbrli:unit id="u">
+    <xbrli:measure>iso4217:EUR</xbrli:measure>
+  </xbrli:unit>
+  <find:fIndicators>
+    <find:filingIndicator contextRef="c">PF.01.02</find:filingIndicator>
+    <find:filingIndicator contextRef="c">PF.02.01</find:filingIndicator>
+    <find:filingIndicator contextRef="c">PF.06.02</find:filingIndicator>
+    <find:filingIndicator contextRef="c">PF.08.01</find:filingIndicator>
+    <find:filingIndicator contextRef="c" filed="false">PF.01.01</find:filingIndicator>
+  </find:fIndicators>
+  <xbrli:context id="c">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="BLx5029_VGx80">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:BL">s2c_LB:x5029</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x80</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="BLx5030_VGx80">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:BL">s2c_LB:x5030</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x80</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="VGx80">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x80</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="BLx5029_ISx5001_VGx80">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:BL">s2c_LB:x5029</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:IS">s2c_SE:x5001</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x80</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="BLx5030_ISx5001_VGx80">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:BL">s2c_LB:x5030</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:IS">s2c_SE:x5001</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x80</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ISx5001_VGx80">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:IS">s2c_SE:x5001</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x80</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="BLx5029_ISx120_VGx80">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:BL">s2c_LB:x5029</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:IS">s2c_SE:x120</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x80</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="BLx5030_ISx120_VGx80">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:BL">s2c_LB:x5030</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:IS">s2c_SE:x120</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x80</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="ISx120_VGx80">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:IS">s2c_SE:x120</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x80</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="BLx5029_VGx84">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:BL">s2c_LB:x5029</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x84</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="BLx5030_VGx84">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:BL">s2c_LB:x5030</xbrldi:explicitMember>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x84</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="VGx84">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:VG">s2c_AM:x84</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="BLx5029">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:BL">s2c_LB:x5029</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="BLx5030">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:BL">s2c_LB:x5030</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="UIID_XJNB">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="UIID">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="IWID_SUx169_UIID_XJNB">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:SU">s2c_MC:x169</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <xbrli:context id="SUx169_UIID">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://standards.iso.org/iso/17442">standards 17442</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:period>2020-02-29</xbrli:period>
+    </xbrli:period>
+    <xbrli:scenario>
+      <xbrldi:explicitMember dimension="s2c_dim:SU">s2c_MC:x169</xbrldi:explicitMember>
+    </xbrli:scenario>
+  </xbrli:context>
+  <s2md_met:ei2453 contextRef="c">s2c_GA:AF</s2md_met:ei2453>
+  <s2md_met:di1044 contextRef="c">2021-01-01</s2md_met:di1044>
+  <s2md_met:di1043 contextRef="c">2021-01-01</s2md_met:di1043>
+  <s2md_met:di2502 contextRef="c">2021-01-01</s2md_met:di2502>
+  <s2md_met:ei1930 contextRef="c">s2c_CU:AED</s2md_met:ei1930>
+  <s2md_met:ei1684 contextRef="c">s2c_CS:x37</s2md_met:ei1684>
+  <s2md_met:si5103 contextRef="c" xml:lang="en">3</s2md_met:si5103>
+  <s2md_met:si5102 contextRef="c" xml:lang="en">asdf</s2md_met:si5102>
+  <s2md_met:ei5096 contextRef="c">s2c_LB:x5000</s2md_met:ei5096>
+  <s2md_met:ei5097 contextRef="c">s2c_LB:x0</s2md_met:ei5097>
+  <s2md_met:ei5020 contextRef="c">s2c_LB:x5007</s2md_met:ei5020>
+  <s2md_met:ii5037 contextRef="c" unitRef="u" decimals="0">33</s2md_met:ii5037>
+  <s2md_met:ii5039 contextRef="c" unitRef="u" decimals="0">3</s2md_met:ii5039>
+  <s2md_met:mi5057 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">1.00</s2md_met:mi5057>
+  <s2md_met:mi5057 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">2.00</s2md_met:mi5057>
+  <s2md_met:mi5057 contextRef="VGx80" unitRef="u" decimals="2">3.00</s2md_met:mi5057>
+  <s2md_met:mi265 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi265>
+  <s2md_met:mi265 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi265>
+  <s2md_met:mi265 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi265>
+  <s2md_met:mi238 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi238>
+  <s2md_met:mi238 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi238>
+  <s2md_met:mi238 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi238>
+  <s2md_met:mi226 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi226>
+  <s2md_met:mi226 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi226>
+  <s2md_met:mi226 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi226>
+  <s2md_met:mi227 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi227>
+  <s2md_met:mi227 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi227>
+  <s2md_met:mi227 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi227>
+  <s2md_met:mi213 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi213>
+  <s2md_met:mi213 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi213>
+  <s2md_met:mi213 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi213>
+  <s2md_met:mi212 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi212>
+  <s2md_met:mi212 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi212>
+  <s2md_met:mi212 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi212>
+  <s2md_met:mi211 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi211>
+  <s2md_met:mi211 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi211>
+  <s2md_met:mi211 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi211>
+  <s2md_met:mi211 contextRef="BLx5029_ISx5001_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi211>
+  <s2md_met:mi211 contextRef="BLx5030_ISx5001_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi211>
+  <s2md_met:mi211 contextRef="ISx5001_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi211>
+  <s2md_met:mi211 contextRef="BLx5029_ISx120_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi211>
+  <s2md_met:mi211 contextRef="BLx5030_ISx120_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi211>
+  <s2md_met:mi211 contextRef="ISx120_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi211>
+  <s2md_met:mi5049 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5049>
+  <s2md_met:mi5049 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5049>
+  <s2md_met:mi5049 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5049>
+  <s2md_met:mi1964 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi1964>
+  <s2md_met:mi1964 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi1964>
+  <s2md_met:mi1964 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi1964>
+  <s2md_met:mi5051 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5051>
+  <s2md_met:mi5051 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5051>
+  <s2md_met:mi5051 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5051>
+  <s2md_met:mi5052 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5052>
+  <s2md_met:mi5052 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5052>
+  <s2md_met:mi5052 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5052>
+  <s2md_met:mi5053 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5053>
+  <s2md_met:mi5053 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5053>
+  <s2md_met:mi5053 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5053>
+  <s2md_met:mi5054 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5054>
+  <s2md_met:mi5054 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5054>
+  <s2md_met:mi5054 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5054>
+  <s2md_met:mi5044 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5044>
+  <s2md_met:mi5044 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5044>
+  <s2md_met:mi5044 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5044>
+  <s2md_met:mi5050 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5050>
+  <s2md_met:mi5050 contextRef="BLx5030_VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5050>
+  <s2md_met:mi5050 contextRef="VGx80" unitRef="u" decimals="2">0.00</s2md_met:mi5050>
+  <s2md_met:mi224 contextRef="BLx5029_VGx80" unitRef="u" decimals="2">0.00</s
