@@ -1,6 +1,6 @@
 import * as path from 'https://deno.land/std@0.86.0/path/mod.ts';
-import {Path, WINDOWS_SEPS} from "https://deno.land/x/path/mod.ts";
-// import { copy } from "https://deno.land/std/fs/mod.ts";
+import { Path, WINDOWS_SEPS } from 'https://deno.land/x/path/mod.ts';
+import { exists as fexists } from 'https://deno.land/std@0.86.0/fs/mod.ts';
 import getFiles, {
   exists,
   fileExt,
@@ -111,32 +111,20 @@ const aggregate: HandlerFunc = async (c) => {
 };
 
 const downloadXbrl: HandlerFunc = async (ctx: Context) => {
-  //pass the document id and the filepath 
+  //pass the document id and the filepath
   //deno requires that the filePath must be under /public
   // the name of the file  should be unique but also have some meaning because
-  // it will be used to zip and send to eipa 
-  // ex:  DSIS_quid_0007_qri_2020_1_2021-02-05-200025.xbrl fundId, module, year, month, date 
-  
-  const { documentId = 0, fileName = '' } = ctx.queryParams;
-  if (documentId == 0) {
-    console.log('downloadXbrlFile Arguments: documentId');
+  // it will be used to zip and send to eipa
+  // ex:  DSIS_quid_0007_qri_2020_1_2021-02-05-200025.xbrl fundId, module, year, month, date
+
+  const { documentId = 0, filename = '' } = ctx.queryParams;
+  if (!documentId) {
+    console.log('downloadXbrlFile Arguments (api): documentId');
     return;
   }
-const fpath = new Path(fileName);
-
-//const x=await Deno.base
-
-  if (fileName) {
-    const p = await Deno.run({
-      cmd: [
-        'cmd',
-        '/c',
-        'C:\\Users\\kyrlo\\soft\\DbTest\\XbrlWriterZ.exe',
-        `${documentId}`,
-        `${fileName}`,
-      ],
-    });
-  } else {
+  if (!filename) {
+    //user did not specified filename. It's ok.
+    //Console program will create file in XbrlFolder in configdata.json
     const p = await Deno.run({
       cmd: [
         'cmd',
@@ -145,13 +133,50 @@ const fpath = new Path(fileName);
         `${documentId}`,
       ],
     });
+    return;
   }
 
-  const fileBuf = await Deno.readFile(fileName);
+
+  if (filename) {
+    try {
+      const dir = path.dirname(filename);
+      const direxists = await fexists(dir);
+      if (!direxists) {
+        console.log(`directory :${dir} does not EXIST`);
+        return;
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  
+  const p = await Deno.run({
+    cmd: [
+      'cmd',
+      '/c',
+      'C:\\Users\\kyrlo\\soft\\DbTest\\XbrlWriterZ.exe',
+      `${documentId}`,
+      `${filename}`,
+    ],
+  });
+
+  const fileCreated = await fexists(filename);
+  if (!fileCreated) {
+    console.log(`File was not created. file:${filename}`);
+    return;
+  }
+
+  const fileBuf = await Deno.readFile(filename);
+  if (!fileBuf) {
+    console.log(`File was not created. file:${filename}`);
+    return;
+  }
+
   ctx.response.headers.set('Content-Type', 'application/octet-stream');
   ctx.response.headers.set(
     'Content-Disposition',
-    `attachment;filename=${fileName}`
+    `attachment;filename=${filename}`
   );
   return fileBuf;
 };
