@@ -181,6 +181,51 @@ const downloadXbrl: HandlerFunc = async (ctx: Context) => {
   return fileBuf;
 };
 
+
+const uploadExcel: HandlerFunc = async (ctx: Context) => {
+  //pass  filePath, fundId, userId, module, year, quarter
+  //http://localhost:8000/uploadExcel?filename=C:\Users\kyrlo\OneDrive\Documents\PENSION%20DSIS\My%20Testing\UserExcel\AXI_Anual_Exempted_L6.xlsx&fundId=9&userId=19&module=axi&year=2020&quarter=2
+
+  const {  filename = '',fundId=0,userId=0,module='',year=0,quarter=-1 } = ctx.queryParams;
+  
+  if (!filename || !fundId || !userId || !module || !year || quarter==-1 ){
+    console.log('uploadExcel arguments: filePath, fundId, userId, module, year, quarter')
+    return;
+  }
+  
+ 
+    try {
+      
+      const isFileExists = await fexists(filename);
+      if (!isFileExists) {
+        console.log(`File does NOT exist`)
+        console.log(`file :${filename} `);
+        return;
+      }
+    } catch (e) {
+      console.log(e);
+    }  
+
+  
+  const p = await Deno.run({
+    cmd: [
+      'cmd',
+      '/c',
+      'C:\\Users\\kyrlo\\soft\\DbTest\\DataOperationsZ.exe',
+      `${filename}`,
+      `${fundId}`,
+      `${userId}`,
+      `${module}`,
+      `${year}`,
+      `${quarter}`,
+    ],
+  });
+
+  
+  
+};
+
+
 const copyfile = async (sourceName: string, destName: string) => {
   const __dirname = new URL('.', import.meta.url).pathname;
 
@@ -231,6 +276,7 @@ app
   .get('/validate', validateDocument)
   .get('/aggregate', aggregate)
   .get('/downloadXbrl', downloadXbrl)
+  .get('/uploadExcel', uploadExcel)
   .file('/show', 'public/index.html')
   .static('/test', './public') //this is required to make a folder accessible
   .start({ port: 8000 });
