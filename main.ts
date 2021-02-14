@@ -51,7 +51,6 @@ app.use((next) => async (c) => {
   const __filename = new URL('', import.meta.url).pathname;
   // const __dirname = new URL('.', import.meta.url).pathname;
   const __dirname = Deno.cwd();    
-  //`${__dirname}\\ConfigData.json`;    
   const filename = path.join(__dirname,'ConfigData.json')
   const jsonObj: any = await readJson(filename);
   filesData.excelFolder = jsonObj['OutputXbrlFolder'];
