@@ -49,10 +49,11 @@ console.log('PensionDenoApi started=> http://localhost:8080/');
 app.use((next) => async (c) => {
   c.set('Name', 'Mu Shan');
   const __filename = new URL('', import.meta.url).pathname;
-  const __dirname = new URL('.', import.meta.url).pathname;
-  const filename = `${__dirname}ConfigData.json`;
-  const filenamex = filename.slice(1);
-  const jsonObj: any = await readJson(filenamex);
+  // const __dirname = new URL('.', import.meta.url).pathname;
+  const __dirname = Deno.cwd();    
+  //`${__dirname}\\ConfigData.json`;    
+  const filename = path.join(__dirname,'ConfigData.json')
+  const jsonObj: any = await readJson(filename);
   filesData.excelFolder = jsonObj['OutputXbrlFolder'];
   return next(c);
 });
