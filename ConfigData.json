@@ -5,6 +5,8 @@
   "ExcelFilesProcessed": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\UserExcelProcessed",
   "OutputXbrlFolder": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\xbrlFiles",
 
+  "ExecFolder": "C:\\Users\\kyrlo\\soft\\DbTest",
+
   "LoggerDatabaseWriterFile": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\loggerDbWriter.txt",
   "LoggerValidatorFile": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\loggerValidator.txt",
   "LoggerXbrlFile": "C:\\Users\\kyrlo\\OneDrive\\Documents\\PENSION DSIS\\My Testing\\loggerXbrlCreator.txt",

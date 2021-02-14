@@ -28,6 +28,7 @@ const app = new Application();
 
 const filesData = {
   excelFolder: '',
+  execFolder: '',
   num: 3,
 };
 
@@ -48,12 +49,14 @@ console.log('PensionDenoApi started=> http://localhost:8080/');
 
 app.use((next) => async (c) => {
   c.set('Name', 'Mu Shan');
+  
   const __filename = new URL('', import.meta.url).pathname;
   // const __dirname = new URL('.', import.meta.url).pathname;
-  const __dirname = Deno.cwd();    
-  const filename = path.join(__dirname,'ConfigData.json')
+  const __dirname = Deno.cwd();
+  const filename = path.join(__dirname, 'ConfigData.json');
   const jsonObj: any = await readJson(filename);
   filesData.excelFolder = jsonObj['OutputXbrlFolder'];
+  filesData.execFolder = jsonObj['ExecFolder'];
   return next(c);
 });
 
@@ -69,7 +72,7 @@ const validateDocument: HandlerFunc = async (c) => {
     cmd: [
       'cmd',
       '/c',
-      'C:\\Users\\kyrlo\\soft\\DbTest\\ValidationsZ.exe',
+      path.join(filesData.execFolder, 'ValidationsZ.exe'),
       `${fundId}`,
       `${documentId}`,
     ],
@@ -88,7 +91,7 @@ const deleteDocument: HandlerFunc = async (c) => {
     cmd: [
       'cmd',
       '/c',
-      'C:\\Users\\kyrlo\\soft\\DbTest\\DeleteDocumentData.exe',
+      path.join(filesData.execFolder, 'DeleteDocumentData.exe'),      
       `${documentId}`,
     ],
   });
@@ -107,7 +110,7 @@ const aggregate: HandlerFunc = async (c) => {
     cmd: [
       'cmd',
       '/c',
-      'C:\\Users\\kyrlo\\soft\\DbTest\\Aggregates.exe',
+      path.join(filesData.execFolder, 'Aggregates.exe'),            
       `${userId}`,
       `${moduleCode}`,
       `${year}`,
@@ -138,7 +141,7 @@ const downloadXbrl: HandlerFunc = async (ctx: Context) => {
       cmd: [
         'cmd',
         '/c',
-        'C:\\Users\\kyrlo\\soft\\DbTest\\XbrlWriterZ.exe',
+        path.join(filesData.execFolder, 'XbrlWriterZ.exe'),              
         `${documentId}`,
       ],
     });
@@ -163,7 +166,7 @@ const downloadXbrl: HandlerFunc = async (ctx: Context) => {
     cmd: [
       'cmd',
       '/c',
-      'C:\\Users\\kyrlo\\soft\\DbTest\\XbrlWriterZ.exe',
+      path.join(filesData.execFolder, 'XbrlWriterZ.exe'),                    
       `${documentId}`,
       `${filename}`,
     ],
@@ -198,7 +201,6 @@ const downloadXbrl: HandlerFunc = async (ctx: Context) => {
   //   filename
   // );
 
-
   await delay(6000);
 
   const fileCreated = existsSync(filename);
@@ -206,8 +208,7 @@ const downloadXbrl: HandlerFunc = async (ctx: Context) => {
     console.log(`Xbrl File was not created. file:${filename}`);
     return `Xbrl File was not created. file:${filename}`;
   }
-  
-  
+
   const fileBuf = Deno.readFileSync(filename);
   if (!fileBuf) {
     console.log(`Xbrl File was not created. file:${filename}`);
@@ -236,7 +237,7 @@ const uploadExcel: HandlerFunc = async (ctx: Context) => {
     console.log(
       'uploadExcel arguments: filePath, fundId, userId, module, year, quarter'
     );
-    return   'uploadExcel arguments: filePath, fundId, userId, module, year, quarter';
+    return 'uploadExcel arguments: filePath, fundId, userId, module, year, quarter';
   }
 
   try {
@@ -248,14 +249,14 @@ const uploadExcel: HandlerFunc = async (ctx: Context) => {
     }
   } catch (e) {
     console.log(e);
-    return `{e}`
+    return `{e}`;
   }
 
   const p = await Deno.run({
     cmd: [
       'cmd',
       '/c',
-      'C:\\Users\\kyrlo\\soft\\DbTest\\DataOperationsZ.exe',
+      path.join(filesData.execFolder, 'DataOperationsZ.exe'),      
       `${filename}`,
       `${fundId}`,
       `${userId}`,
@@ -264,7 +265,7 @@ const uploadExcel: HandlerFunc = async (ctx: Context) => {
       `${quarter}`,
     ],
   });
-  return `Uploaded file :${filename}`
+  return `Uploaded file :${filename}`;
 };
 
 app
