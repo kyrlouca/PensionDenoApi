@@ -49,7 +49,7 @@ console.log('PensionDenoApi started=> http://localhost:8080/');
 
 app.use((next) => async (c) => {
   c.set('Name', 'Mu Shan');
-  
+
   const __filename = new URL('', import.meta.url).pathname;
   // const __dirname = new URL('.', import.meta.url).pathname;
   const __dirname = Deno.cwd();
@@ -91,7 +91,7 @@ const deleteDocument: HandlerFunc = async (c) => {
     cmd: [
       'cmd',
       '/c',
-      path.join(filesData.execFolder, 'DeleteDocumentData.exe'),      
+      path.join(filesData.execFolder, 'DeleteDocumentData.exe'),
       `${documentId}`,
     ],
   });
@@ -110,7 +110,7 @@ const aggregate: HandlerFunc = async (c) => {
     cmd: [
       'cmd',
       '/c',
-      path.join(filesData.execFolder, 'Aggregates.exe'),            
+      path.join(filesData.execFolder, 'Aggregates.exe'),
       `${userId}`,
       `${moduleCode}`,
       `${year}`,
@@ -141,7 +141,7 @@ const downloadXbrl: HandlerFunc = async (ctx: Context) => {
       cmd: [
         'cmd',
         '/c',
-        path.join(filesData.execFolder, 'XbrlWriterZ.exe'),              
+        path.join(filesData.execFolder, 'XbrlWriterZ.exe'),
         `${documentId}`,
       ],
     });
@@ -166,7 +166,7 @@ const downloadXbrl: HandlerFunc = async (ctx: Context) => {
     cmd: [
       'cmd',
       '/c',
-      path.join(filesData.execFolder, 'XbrlWriterZ.exe'),                    
+      path.join(filesData.execFolder, 'XbrlWriterZ.exe'),
       `${documentId}`,
       `${filename}`,
     ],
@@ -201,9 +201,17 @@ const downloadXbrl: HandlerFunc = async (ctx: Context) => {
   //   filename
   // );
 
-  await delay(6000);
-
-  const fileCreated = existsSync(filename);
+  const t1 = new Date();
+  // await delay(6000);
+  let diff=0;  
+  let fileCreated = false;
+  while (!fileCreated && diff < 9000) {
+    fileCreated = existsSync(filename);
+    const t2 = new Date();
+    diff = t2.getTime() - t1.getTime();    
+  }
+  console.log(`loading:${diff}`);
+  fileCreated = existsSync(filename);
   if (!fileCreated) {
     console.log(`Xbrl File was not created. file:${filename}`);
     return `Xbrl File was not created. file:${filename}`;
@@ -256,7 +264,7 @@ const uploadExcel: HandlerFunc = async (ctx: Context) => {
     cmd: [
       'cmd',
       '/c',
-      path.join(filesData.execFolder, 'DataOperationsZ.exe'),      
+      path.join(filesData.execFolder, 'DataOperationsZ.exe'),
       `${filename}`,
       `${fundId}`,
       `${userId}`,
